@@ -108,5 +108,16 @@ namespace _2
         {
 
         }
+
+        private void add_landing2_button_Click(object sender, EventArgs e)
+        {
+            add_book1 windows = new add_book1();
+            DialogResult res = windows.ShowDialog();
+
+            if (res== DialogResult.OK)
+            {
+                update_button_knigi_Click_1(sender, e);
+            }
+        }
     }
 }

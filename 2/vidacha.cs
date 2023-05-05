@@ -13,11 +13,11 @@ namespace _2
 {
     public partial class vidacha : Form
     {
-       
+
         public vidacha()
         {
             InitializeComponent();
-            
+
         }
 
         private void Exit_vidacha_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace _2
 
         private void save_vidacha_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
