@@ -1,5 +1,6 @@
 using System.Data.SQLite;
 using System.Data;
+using System.Windows.Forms;
 
 namespace _2
 {
@@ -118,22 +119,42 @@ namespace _2
             {
                 update_button_knigi_Click_1(sender, e);
             }
-            
+
         }
 
         private void edit_landing2_button_Click(object sender, EventArgs e)
         {
-            int id =int.Parse(Book_table.CurrentRow.Cells[0].Value.ToString());
+            int id = int.Parse(Book_table.CurrentRow.Cells[0].Value.ToString());
             update_book windows = new update_book(id);
 
-            DialogResult res =windows.ShowDialog();
+            DialogResult res = windows.ShowDialog();
 
             if (res == DialogResult.OK)
             {
                 update_button_knigi_Click_1(sender, e);
 
             }
-            
+
+
+        }
+
+        private void delete_landing2_button_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(Book_table.CurrentRow.Cells[0].Value.ToString());
+            SQLiteConnection con = new SQLiteConnection("data source=library.db");
+            con.Open();
+            var res=MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM books WHERE id_books =" + id;
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.ExecuteNonQuery();
+
+                update_button_knigi_Click_1(sender, e);
+            }
+            con.Close();
 
         }
     }

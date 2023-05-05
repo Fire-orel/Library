@@ -214,6 +214,7 @@
             delete_landing2_button.TabIndex = 2;
             delete_landing2_button.Text = "Удалить";
             delete_landing2_button.UseVisualStyleBackColor = true;
+            delete_landing2_button.Click += delete_landing2_button_Click;
             // 
             // edit_landing2_button
             // 
