@@ -37,7 +37,7 @@
             edit_landing_button = new Button();
             add_landing_button = new Button();
             tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
+            Book_table = new DataGridView();
             update_button_knigi = new Button();
             groupBox2 = new GroupBox();
             delete_landing2_button = new Button();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Book_table).BeginInit();
             groupBox2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -82,7 +82,7 @@
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 3, 3, 3);
+            tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(941, 540);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Выдача";
@@ -158,31 +158,31 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dataGridView2);
+            tabPage2.Controls.Add(Book_table);
             tabPage2.Controls.Add(update_button_knigi);
             tabPage2.Controls.Add(groupBox2);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(941, 540);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Книги";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // Book_table
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(6, 83);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(930, 451);
-            dataGridView2.TabIndex = 3;
+            Book_table.AllowUserToAddRows = false;
+            Book_table.AllowUserToDeleteRows = false;
+            Book_table.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Book_table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Book_table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Book_table.Location = new Point(6, 83);
+            Book_table.Name = "Book_table";
+            Book_table.ReadOnly = true;
+            Book_table.RowHeadersWidth = 51;
+            Book_table.RowTemplate.Height = 29;
+            Book_table.Size = new Size(930, 451);
+            Book_table.TabIndex = 3;
             // 
             // update_button_knigi
             // 
@@ -223,6 +223,7 @@
             edit_landing2_button.TabIndex = 1;
             edit_landing2_button.Text = "Изменит";
             edit_landing2_button.UseVisualStyleBackColor = true;
+            edit_landing2_button.Click += edit_landing2_button_Click;
             // 
             // add_landing2_button
             // 
@@ -324,7 +325,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Book_table).EndInit();
             groupBox2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
@@ -343,7 +344,7 @@
         private Button add_landing_button;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private DataGridView dataGridView2;
+        private DataGridView Book_table;
         private Button update_button_knigi;
         private GroupBox groupBox2;
         private Button delete_landing2_button;

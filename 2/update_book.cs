@@ -28,7 +28,12 @@ namespace _2
 
             using (SQLiteDataReader reader = cmd.ExecuteReader())
             {
-
+                while(reader.Read())
+                {
+                    update_name_book.Text=reader.GetString("name");
+                    update_avtor_book.Text = reader.GetString("author");
+                    update_year_book.Value = int.Parse(reader.GetString("year"));
+                }
             }
         }
 
@@ -36,9 +41,14 @@ namespace _2
         {
             SQLiteConnection con = new SQLiteConnection("data source=library.db");
             con.Open();
-            string sql = "UPDATE books SET name='', author='', year='' WHERE id_books=\"+id;";
+            string sql = "UPDATE books SET name='"+update_name_book.Text+"', author='"+update_avtor_book.Text+"', year='"+update_year_book.Value.ToString()+"' WHERE id_books="+id;
 
+            SQLiteCommand cmd=new SQLiteCommand(sql,con);
+            cmd.ExecuteNonQuery();
+
+            this.DialogResult =DialogResult.OK;
             con.Close();
+            this.Close();
         }
     }
 }

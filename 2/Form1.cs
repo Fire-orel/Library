@@ -52,7 +52,7 @@ namespace _2
 
             adapter.Fill(dt);
 
-            dataGridView2.DataSource = dt;
+            Book_table.DataSource = dt;
 
             con.Close();
         }
@@ -114,10 +114,27 @@ namespace _2
             add_book1 windows = new add_book1();
             DialogResult res = windows.ShowDialog();
 
-            if (res== DialogResult.OK)
+            if (res == DialogResult.OK)
             {
                 update_button_knigi_Click_1(sender, e);
             }
+            
+        }
+
+        private void edit_landing2_button_Click(object sender, EventArgs e)
+        {
+            int id =int.Parse(Book_table.CurrentRow.Cells[0].Value.ToString());
+            update_book windows = new update_book(id);
+
+            DialogResult res =windows.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                update_button_knigi_Click_1(sender, e);
+
+            }
+            
+
         }
     }
 }

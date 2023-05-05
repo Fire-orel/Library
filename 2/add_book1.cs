@@ -33,7 +33,7 @@ namespace _2
             SQLiteCommand cmd = new SQLiteCommand(sql, con);
             cmd.ExecuteNonQuery();
 
-            DialogResult res = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
             con.Close();
             this.Close();
         }
