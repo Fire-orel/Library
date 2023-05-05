@@ -97,5 +97,16 @@ namespace _2
             }
 
         }
+
+        private void add_landing_button_Click(object sender, EventArgs e)
+        {
+            var myForm = new vidacha();
+            myForm.Show();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
